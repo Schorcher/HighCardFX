@@ -48,11 +48,15 @@ public class GameUISetUp
         GameUI.logo.setSmooth(true);
         GameUI.logo.setVisible(true);
         GameUI.logo.setPreserveRatio(true);
-        GameUI.logo.setLayoutX(-100);
-        GameUI.logo.setLayoutY(0);
+
+        GameUI.logo.xProperty().bind(GameUI.borderPane.widthProperty().divide(2).subtract(400));
+        GameUI.logo.yProperty().bind(GameUI.borderPane.heightProperty().divide(4).subtract(100));
+        //GameUI.logo.setLayoutX(-100);
+        //GameUI.logo.setLayoutY(0);
         GameUI.logo.setScaleX(.5);
         GameUI.logo.setScaleY(.5);
         GameUI.borderPane.getChildren().add(GameUI.logo);
+
     }
 
     private static void setUpTop()
