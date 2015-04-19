@@ -39,7 +39,7 @@ public class GameUISetUp
         GameUI.background.setSmooth(true);
         GameUI.background.toBack();
         GameUI.background.fitWidthProperty().bind(GameUI.borderPane.widthProperty());
-        //GameUI.background.fitHeightProperty().bind(GameUI.borderPane.heightProperty());
+        GameUI.background.fitHeightProperty().bind(GameUI.borderPane.heightProperty());
         GameUI.borderPane.getChildren().add(GameUI.background);
 
 

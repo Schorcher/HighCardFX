@@ -6,15 +6,19 @@ import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
 
-/**
- * Created by davidmcfall on 3/23/15.
- */
+/*
+        * Name:        David McFall
+        * Instructor:  Dr. Jones
+        * Date:        3/30/15
+        * Assignment:  HighCard Game
+        * Purpose:
+*/
 public class CardBoxSetUp
 {
     // Sets up the initial box
     public static void run()
     {
-        GameUI.boxList = new ArrayList<PlayerBox>();
+        GameUI.boxList = new ArrayList<>();
 
         GameUI.cardBox = new FlowPane();
         GameUI.cardBox.setAlignment(Pos.CENTER);
@@ -34,13 +38,13 @@ public class CardBoxSetUp
         if(GameUI.boxList.size()>4)
         {
             GameUI.mainStage.setHeight(600);
-            GameUI.background.setFitHeight(600);
+            //GameUI.background.setFitHeight(600);
         }
         // Size if greater than 8 players
         if(GameUI.boxList.size()>8)
         {
             GameUI.mainStage.setHeight(800);
-            GameUI.background.setFitHeight(800);
+            //GameUI.background.setFitHeight(800);
         }
     }
 

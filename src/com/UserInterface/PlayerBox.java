@@ -12,9 +12,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-/**
- * Created by davidmcfall on 3/23/15.
- */
+/*
+        * Name:        David McFall
+        * Instructor:  Dr. Jones
+        * Date:        3/30/15
+        * Assignment:  HighCard Game
+        * Purpose:
+*/
 public class PlayerBox extends VBox
 {
     // Initialize Members
@@ -78,7 +82,7 @@ public class PlayerBox extends VBox
     public void update()
     {
         this.score.setStyle("-fx-text-fill: white");
-        this.cardImage.setOpacity(.7);
+        this.cardImage.setOpacity(.5);
         this.cardImage.setImage(player.getCurrentCard().getImage());
         this.cardName.setText(player.getCurrentCard().toString());
         if(this.player.getWins() > this.current)
