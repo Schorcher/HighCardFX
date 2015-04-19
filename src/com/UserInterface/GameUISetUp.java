@@ -42,7 +42,6 @@ public class GameUISetUp
         GameUI.background.fitHeightProperty().bind(GameUI.borderPane.heightProperty());
         GameUI.borderPane.getChildren().add(GameUI.background);
 
-
         // Sets up the HighCard Logo
         GameUI.logo = new ImageView(new Image("/com/Resources/Misc/HighCardLogo.png"));
         GameUI.logo.setSmooth(true);
