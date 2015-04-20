@@ -44,6 +44,7 @@ public class GameUI
     {
         mainStage.setMinHeight(400);
         mainStage.setMinWidth(500);
+        borderPane.setStyle("-fx-background-color: green");
     }
 
     public static Scene setMainScene()

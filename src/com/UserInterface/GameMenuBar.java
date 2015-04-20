@@ -3,6 +3,7 @@ package com.UserInterface;
 import com.UserInterface.PopUps.PopUpAbout;
 import com.UserInterface.PopUps.PopUpExitApp;
 import com.UserInterface.PopUps.PopUpOptions;
+import com.UserInterface.PopUps.PopUpSaveGame;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -100,6 +101,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
          *  Pop up the save window.
          *
          */
+        PopUpSaveGame.start();
     }
 
     protected static void optionsEvent()

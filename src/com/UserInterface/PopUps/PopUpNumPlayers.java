@@ -64,7 +64,7 @@ public class PopUpNumPlayers
         vBox.setAlignment(Pos.CENTER);
         vBox.setSpacing(25.0);
         vBox.getChildren().addAll(numLabel, hBox, hBox2);
-        dialogStage.setHeight(150);
+        dialogStage.setHeight(175);
         dialogStage.setWidth(250);
         dialogStage.setScene(new Scene(vBox));
         dialogStage.show();
