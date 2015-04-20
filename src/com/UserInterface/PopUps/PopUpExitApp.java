@@ -1,5 +1,6 @@
 package com.UserInterface.PopUps;
 
+import com.UserInterface.GameUI;
 import com.UserInterface.PopUps.PopUpButton;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,9 +17,22 @@ public class PopUpExitApp
 {
     public static Stage dialogStage = new Stage();
     public static Scene exitScene;
+    private static boolean hasRun=false;
+
+    public static void firstRun()
+    {
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(GameUI.mainStage);
+        hasRun=true;
+    }
 
     public static void start()
     {
+        // Sets the modality of the window
+        if(hasRun==false)
+        {
+            firstRun();
+        }
 
         dialogStage.initModality(Modality.WINDOW_MODAL);
 

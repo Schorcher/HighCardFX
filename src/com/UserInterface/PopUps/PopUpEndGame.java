@@ -1,11 +1,13 @@
 package com.UserInterface.PopUps;
 
+import com.UserInterface.GameUI;
 import com.UserInterface.PopUps.PopUpButton;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -16,10 +18,22 @@ public class PopUpEndGame {
     public static PopUpButton noBtn = new PopUpButton("No");
     public static Stage dialogStage = new Stage();
     public static Scene endGame;
+    private static boolean hasRun=false;
+
+    public static void firstRun()
+    {
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(GameUI.mainStage);
+        hasRun=true;
+    }
 
     public static void start()
     {
-
+        // Sets the modality of the window
+        if(hasRun==false)
+        {
+            firstRun();
+        }
 
         Label exitLabel = new Label("Are you sure you want to end the game?");
         exitLabel.setAlignment(Pos.BASELINE_CENTER);
