@@ -6,9 +6,9 @@ package com.GameEngine;
 public class SaveGame
 {
     public String itemID;
-    public String itemWins;
+    public int itemWins;
 
-    SaveGame(String name, String wins)
+    SaveGame(String name, int wins)
     {
         this.itemID = name;
         this.itemWins = wins;
@@ -24,12 +24,12 @@ public class SaveGame
         this.itemID = itemID;
     }
 
-    public String getItemWins()
+    public int getItemWins()
     {
         return itemWins;
     }
 
-    public void setItemWins(String itemWins)
+    public void setItemWins(int itemWins)
     {
         this.itemWins = itemWins;
     }

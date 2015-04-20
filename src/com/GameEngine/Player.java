@@ -12,12 +12,13 @@ public class Player
     private int wins;
     private ArrayList<Card> cards;
     private boolean roundWinner;
-    private String playerName = "Player";
+    private String playerName;
     private int playerID;
     private int finalWins=0;
 
     Player(int playerID)
     {
+        playerName = "Player";
         this.playerID = playerID;
         setUp();
     }
@@ -79,6 +80,11 @@ public class Player
     public void setRoundWinner(boolean v)
     {
         this.roundWinner = v;
+    }
+
+    public int getFinalWins()
+    {
+        return this.finalWins;
     }
 
 }
