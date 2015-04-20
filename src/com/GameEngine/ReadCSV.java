@@ -5,6 +5,7 @@ package com.GameEngine;
  * Created by Server on 4/19/2015.
  */
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +15,12 @@ public class ReadCSV {
 
     public static Map<String, String> maps = new HashMap<String, String>();
     public static List<SaveGame> ArraySaveList = new ArrayList<>();
+    public static File f;
 
     public static void run() {
 
-        String csvFile = "C:\\Users\\Server\\IdeaProjects\\HighCardFX2.0\\src\\com\\Resources\\SavedGames\\saves.csv";
+
+        String csvFile = System.getProperty("user.dir") + "\\src\\com\\Resources\\SavedGames\\saves.csv";
 
 
         BufferedReader br = null;

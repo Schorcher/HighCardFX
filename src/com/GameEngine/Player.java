@@ -14,6 +14,7 @@ public class Player
     private boolean roundWinner;
     private String playerName = "Player";
     private int playerID;
+    private int finalWins=0;
 
     Player(int playerID)
     {
