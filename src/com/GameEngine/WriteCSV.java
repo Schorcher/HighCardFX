@@ -12,25 +12,21 @@ public class WriteCSV
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
 
-    public static void run()
-    {
-
-    }
-
+    // Method used to write to the save file
     public static void writeThis(String name, int wins)
     {
         FileWriter fileWriter = null;
 
         try
         {
+            // Appends the save file to the end of the CSV file.
             fileWriter = new FileWriter(csvFile,true);
             fileWriter.append(name);
             fileWriter.append(COMMA_DELIMITER);
             fileWriter.append(String.valueOf(wins));
             fileWriter.append(NEW_LINE_SEPARATOR);
 
-
-
+            // Successful print message
             System.out.println("CSV file was updated successfully !");
         }
         catch (Exception ex)
@@ -40,6 +36,7 @@ public class WriteCSV
         }
         finally
         {
+            // Closes the FileWriter.
             try {
                 fileWriter.flush();
                 fileWriter.close();

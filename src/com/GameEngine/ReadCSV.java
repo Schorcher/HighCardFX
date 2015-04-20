@@ -16,20 +16,17 @@ public class ReadCSV {
     public static List<SaveGame> ArraySaveList = new ArrayList<>();
     public static File f;
 
-    public static void run() {
-
-
+    public static void run()
+    {
+        // File path to the CSV universal to any operating system.
         String csvFile = System.getProperty("user.dir") + "/src/com/Resources/SavedGames/saves.csv";
-
 
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
 
-        try {
-
-
-
+        try
+        {
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
 
@@ -44,8 +41,6 @@ public class ReadCSV {
                 {
                     maps.put(save[0], Integer.valueOf(save[1]));
                 }
-
-
             }
 
             //loop map
@@ -55,18 +50,27 @@ public class ReadCSV {
 
                 System.out.println("Save [name= " + entry.getKey() + " , wins="
                         + entry.getValue() + "]");
-
             }
 
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e)
+        {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                try {
+        }
+        finally
+        {
+            if (br != null)
+            {
+                try
+                {
                     br.close();
-                } catch (IOException e) {
+                }
+                catch (IOException e)
+                {
                     e.printStackTrace();
                 }
             }
