@@ -1,12 +1,19 @@
 package com.UserInterface.PopUps;
 
 import com.UserInterface.GameUI;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import javax.jnlp.ServiceManager;
+import java.awt.*;
+import java.net.URI;
 
 /*
  * Name:        David McFall
@@ -35,18 +42,30 @@ public class PopUpAbout
             firstRun();
         }
 
-        Label exitLabel = new Label("Author: David McFall");
-        exitLabel.setAlignment(Pos.CENTER);
+        Label authorLabel = new Label("Author: David McFall");
+        authorLabel.setAlignment(Pos.CENTER);
+
+        HBox webLabels = new HBox();
+        Label visitLabel = new Label("Website: ");
+        Hyperlink link = new Hyperlink("http://google.com/");
+        //link.setOnAction(evt -> linkAction());
+        webLabels.setAlignment(Pos.CENTER);
+        webLabels.getChildren().addAll(visitLabel,link);
 
 
         VBox vBox = new VBox();
         vBox.setAlignment(Pos.CENTER);
         vBox.setSpacing(25.0);
-        vBox.getChildren().addAll(exitLabel);
+        vBox.getChildren().addAll(authorLabel,webLabels);
         dialogStage.setHeight(150);
         dialogStage.setWidth(250);
         dialogStage.setScene(new Scene(vBox));
         dialogStage.show();
+    }
+
+    public static void linkAction()
+    {
+
     }
 }
 

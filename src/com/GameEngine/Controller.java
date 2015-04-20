@@ -23,10 +23,16 @@ public class Controller
     public static void playGame()
     {
         if(game.hasStarted()) {
+            GameUI.playButton.setDisable(true);
+            GameUI.dealButton.setDisable(false);
+            GameUI.endButton.setDisable(false);
             reset();
             game.play();
             updateCardBox();
         } else {
+            GameUI.playButton.setDisable(true);
+            GameUI.dealButton.setDisable(false);
+            GameUI.endButton.setDisable(false);
             GameUI.logo.setVisible(false);
             Controller.game.resetWins();
             game.play();

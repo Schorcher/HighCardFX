@@ -71,7 +71,6 @@ public class PopUpOptions
         vBox.setSpacing(25.0);
         vBox.getChildren().addAll(titleLabel, backgroundBox, btnBox);
 
-
         // Sets up the window options
         dialogStage.setHeight(175);
         dialogStage.setWidth(275);

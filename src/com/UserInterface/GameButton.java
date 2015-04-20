@@ -77,9 +77,7 @@ public class GameButton extends Button implements EventHandler<ActionEvent>
     // Play button events
     private static void playEvent()
     {
-        GameUI.playButton.setDisable(true);
-        GameUI.dealButton.setDisable(false);
-        GameUI.endButton.setDisable(false);
+
         if (!Controller.game.hasStarted()) {
             PopUpNumPlayers.start();
         } else {
