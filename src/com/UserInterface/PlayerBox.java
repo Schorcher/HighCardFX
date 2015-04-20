@@ -81,6 +81,7 @@ public class PlayerBox extends VBox
     // Updates all the members of box to their current values
     public void update()
     {
+        this.playerName.setText(player.getPlayerName());
         this.score.setStyle("-fx-text-fill: white");
         this.cardImage.setOpacity(.5);
         this.cardImage.setImage(player.getCurrentCard().getImage());
@@ -97,6 +98,7 @@ public class PlayerBox extends VBox
     // Visually emphasises the final winner
     public void setWinner()
     {
+        this.player.setFinalWins();
         this.winner.setVisible(true);
         this.cardImage.setOpacity(1.0);
         this.cardImage.setEffect(borderGlow);

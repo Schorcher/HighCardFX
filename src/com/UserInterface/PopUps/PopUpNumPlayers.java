@@ -76,7 +76,7 @@ public class PopUpNumPlayers
             dialogStage.close();
             Controller.game.setNumOfPlayers(listOfNumPlayers.getSelectionModel().getSelectedIndex() + 3);
             Controller.playGame();
-            GameUI.boxList.get(0).playerName.setText(nameField.getText());
+            Controller.game.getPlayer(0).setPlayerName(nameField.getText());
         }
 
     }

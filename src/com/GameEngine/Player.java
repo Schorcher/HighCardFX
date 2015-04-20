@@ -62,6 +62,11 @@ public class Player
         return this.playerName;
     }
 
+    public void setPlayerName(String name)
+    {
+        this.playerName=name;
+    }
+
     public int getPlayerID()
     {
         return this.playerID;
@@ -85,6 +90,11 @@ public class Player
     public int getFinalWins()
     {
         return this.finalWins;
+    }
+
+    public void setFinalWins()
+    {
+        finalWins++;
     }
 
 }

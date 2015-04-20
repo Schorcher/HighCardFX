@@ -23,11 +23,13 @@ public class WriteCSV
 
         try
         {
-            fileWriter = new FileWriter(csvFile);
+            fileWriter = new FileWriter(csvFile,true);
             fileWriter.append(name);
             fileWriter.append(COMMA_DELIMITER);
             fileWriter.append(String.valueOf(wins));
             fileWriter.append(NEW_LINE_SEPARATOR);
+
+
 
             System.out.println("CSV file was created successfully !!!");
         }
