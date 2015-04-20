@@ -31,11 +31,11 @@ public class WriteCSV
 
 
 
-            System.out.println("CSV file was created successfully !!!");
+            System.out.println("CSV file was updated successfully !");
         }
         catch (Exception ex)
         {
-            System.out.println("Error in CsvFileWriter !!!");
+            System.out.println("Error in CsvFileWriter !");
             ex.printStackTrace();
         }
         finally
@@ -44,7 +44,7 @@ public class WriteCSV
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException ex) {
-                System.out.println("Error while flushing/closing fileWriter !!!");
+                System.out.println("Error while flushing/closing fileWriter !");
                 ex.printStackTrace();
             }
         }

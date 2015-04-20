@@ -5,10 +5,8 @@ import com.GameEngine.ReadCSV;
 import com.GameEngine.SaveGame;
 import com.GameEngine.WriteCSV;
 import com.UserInterface.GameUI;
-import com.UserInterface.PopUps.PopUpButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -18,8 +16,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.util.List;
 
 /*
  * Name:        David McFall
@@ -138,7 +134,7 @@ public class PopUpSaveGame
     {
         // Save the game
         saveGame();
-        // Close the diolouge box
+        // Close the dialog box
         closeThis();
     }
 
