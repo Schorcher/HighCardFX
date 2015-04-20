@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /*
@@ -25,10 +26,23 @@ public class PopUpNumPlayers
     public static PopUpButton startBtn = new PopUpButton("Start");
     final static ChoiceBox listOfNumPlayers = new ChoiceBox(FXCollections
             .observableArrayList(3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
+    private static boolean hasRun=false;
 
+    public static void firstRun()
+    {
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(GameUI.mainStage);
+        hasRun=true;
+    }
 
     public static void start()
     {
+        // Sets the modality of the window
+        if(hasRun==false)
+        {
+            firstRun();
+        }
+
         Label numLabel = new Label("How many players?");
         numLabel.setAlignment(Pos.CENTER);
 
@@ -58,7 +72,7 @@ public class PopUpNumPlayers
 
     public static void setNum()
     {
-        if(listOfNumPlayers.getSelectionModel().getSelectedIndex()>0) {
+        if(listOfNumPlayers.getSelectionModel().getSelectedIndex()>=0) {
             dialogStage.close();
             Controller.game.setNumOfPlayers(listOfNumPlayers.getSelectionModel().getSelectedIndex() + 3);
             Controller.playGame();

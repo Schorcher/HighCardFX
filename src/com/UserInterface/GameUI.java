@@ -35,7 +35,15 @@ public class GameUI
         mainStage.setTitle("HighCard");
         GameUISetUp.run();
         setMainStage();
+        setUpMainStage();
         mainStage.show();
+
+    }
+
+    public static void setUpMainStage()
+    {
+        mainStage.setMinHeight(400);
+        mainStage.setMinWidth(500);
     }
 
     public static Scene setMainScene()

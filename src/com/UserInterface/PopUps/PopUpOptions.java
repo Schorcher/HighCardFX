@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /*
@@ -26,9 +27,23 @@ public class PopUpOptions
     private final static ChoiceBox listOfBackgrounds = new ChoiceBox(FXCollections
             .observableArrayList("Original", "New Card", "Plain"));
     private static Button okayBtn, cancelBtn;
+    private static boolean hasRun = false;
+
+    public static void firstRun()
+    {
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(GameUI.mainStage);
+        hasRun=true;
+    }
+
 
     public static void run()
     {
+        // Sets the modality of the window
+        if(hasRun==false)
+        {
+            firstRun();
+        }
         // Sets the title of the window
         titleLabel = new Label("Select options for the game.");
         titleLabel.setAlignment(Pos.CENTER);
