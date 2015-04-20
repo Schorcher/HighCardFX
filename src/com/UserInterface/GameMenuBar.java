@@ -2,14 +2,19 @@ package com.UserInterface;
 
 import com.UserInterface.PopUps.PopUpAbout;
 import com.UserInterface.PopUps.PopUpExitApp;
+import com.UserInterface.PopUps.PopUpOptions;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 
-/**
- * Created by davidmcfall on 3/23/15.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
 {
@@ -104,6 +109,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
          *  Pop up the options window.
          *
          */
+        PopUpOptions.run();
     }
 
     protected static void aboutEvent()
