@@ -80,4 +80,9 @@ public class ReadCSV {
         return ArraySaveList;
     }
 
+    public static void clear()
+    {
+        maps.clear();
+        ArraySaveList.clear();
+    }
 }

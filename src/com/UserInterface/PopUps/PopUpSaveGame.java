@@ -28,12 +28,12 @@ public class PopUpSaveGame
 {
     private static final Stage dialogStage = new Stage();
     public static TextField nameField = new TextField("");
-    public static TableView<SaveGame> saveTable = new TableView<>();
+    public static TableView<SaveGame> saveTable;
     private static boolean hasRun=false;
     private static ObservableList<SaveGame> saveList;
     private static Button saveBtn = new Button("Save");
-    private static TableColumn<SaveGame,String> nameCol = new TableColumn<>("Player Name");
-    private static TableColumn<SaveGame,Integer> winCol = new TableColumn<>("Wins");
+    private static TableColumn<SaveGame,String> nameCol;
+    private static TableColumn<SaveGame,Integer> winCol;
 
 
     public static void firstRun()
@@ -43,7 +43,10 @@ public class PopUpSaveGame
         dialogStage.initOwner(GameUI.mainStage);
 
         // Calls the methods to make the table.
+        saveTable = new TableView<>();
         ReadCSV.run();
+        nameCol = new TableColumn<>("Player Name");
+        winCol = new TableColumn<>("Wins");
         saveTable.getColumns().addAll(nameCol, winCol);
 
         // Makes sure this is not called again.
@@ -57,6 +60,20 @@ public class PopUpSaveGame
         {
             firstRun();
         }
+        else
+        {
+            saveTable=null;
+            saveTable=new TableView<>();
+            saveList.removeAll(saveList);
+            ReadCSV.clear();
+            ReadCSV.run();
+            nameCol.getColumns().clear();
+            winCol.getColumns().clear();
+            saveTable.getColumns().clear();
+            saveTable.getColumns().addAll(nameCol, winCol);
+
+        }
+
 
 
         // Sets the label for the window
@@ -75,14 +92,16 @@ public class PopUpSaveGame
             nameField.setText("Player 1");
         }
 
+        makeSavesList();
+        makeTable();
+
         // Sets the HBox that contains the label and text area
         HBox saveBox = new HBox();
         saveBox.setAlignment(Pos.CENTER);
         saveBox.setSpacing(25.0);
         saveBox.getChildren().addAll(nameLabel, nameField);
 
-        makeSavesList();
-        makeTable();
+
 
         // Sets the VBox for the window.
         VBox vBox = new VBox();
@@ -112,15 +131,15 @@ public class PopUpSaveGame
         // Sets the properties for name column
         nameCol.setMinWidth(150);
         nameCol.setResizable(false);
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("itemID"));
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         // Sets the properties for wins column
         winCol.setMinWidth(150);
         winCol.setResizable(false);
-        winCol.setCellValueFactory(new PropertyValueFactory<>("itemWins"));
+        winCol.setCellValueFactory(new PropertyValueFactory<>("wins"));
 
         // Makes the table un-editable
-        saveTable.setEditable(false);
+        //saveTable.setEditable(false);
 
         // Sets the list of save items as parts of the table.
         saveTable.setItems(saveList);
