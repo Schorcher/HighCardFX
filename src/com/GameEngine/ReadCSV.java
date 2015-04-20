@@ -19,7 +19,7 @@ public class ReadCSV {
     public static void run() {
 
 
-        String csvFile = System.getProperty("user.dir") + "\\src\\com\\Resources\\SavedGames\\saves.csv";
+        String csvFile = System.getProperty("user.dir") + "/src/com/Resources/SavedGames/saves.csv";
 
 
         BufferedReader br = null;

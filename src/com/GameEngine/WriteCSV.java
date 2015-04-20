@@ -8,7 +8,7 @@ import java.io.IOException;
  */
 public class WriteCSV
 {
-    public static String csvFile = System.getProperty("user.dir") + "\\src\\com\\Resources\\SavedGames\\saves.csv";
+    private static String csvFile = System.getProperty("user.dir") + "/src/com/Resources/SavedGames/saves.csv";
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
 
