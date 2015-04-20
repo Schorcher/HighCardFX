@@ -5,6 +5,14 @@ import com.UserInterface.GameUI;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
+ */
+
 public class Main extends Application
 {
     @Override

@@ -1,8 +1,12 @@
 package com.GameEngine;
 
 
-/**
- * Created by Server on 4/19/2015.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 import java.io.*;
 import java.util.ArrayList;

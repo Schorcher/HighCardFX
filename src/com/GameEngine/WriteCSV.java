@@ -3,8 +3,12 @@ package com.GameEngine;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- * Created by Server on 4/20/2015.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 public class WriteCSV
 {

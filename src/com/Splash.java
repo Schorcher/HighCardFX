@@ -22,8 +22,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
-/**
- * Created by davidmcfall on 3/23/15.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 public class Splash
 {

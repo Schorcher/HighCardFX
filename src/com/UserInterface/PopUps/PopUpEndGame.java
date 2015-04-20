@@ -10,8 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * Created by davidmcfall on 3/25/15.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 public class PopUpEndGame {
     public static PopUpButton yesBtn = new PopUpButton("Yes");

@@ -4,8 +4,12 @@ import com.GameEngine.Card;
 
 import java.util.ArrayList;
 
-/**
- * Created by davidmcfall on 3/23/15.
+/*
+ * Name:        David McFall
+ * Instructor:  Dr. Jones
+ * Date:        3/30/15
+ * Assignment:  HighCard Game
+ * Purpose:
  */
 public class Player
 {
