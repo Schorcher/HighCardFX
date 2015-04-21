@@ -66,7 +66,12 @@ public class Controller
 
     public static void finishGame()
     {
-        GameUI.boxList.get(Controller.game.finalWinner()).setWinner();
+        Controller.game.tieSituation();
+        for(int i=0; i<Controller.game.winners.size(); i++)
+        {
+            GameUI.boxList.get(Controller.game.winners.get(i)).setWinner();
+        }
+        //GameUI.boxList.get(Controller.game.finalWinner()).setWinner();
     }
 
     public static void reset()

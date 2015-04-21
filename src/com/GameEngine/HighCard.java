@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class HighCard
 {
     public ArrayList<Player> players;
+    public ArrayList<Integer> winners;
     public Deck cardDeck;
     public boolean started = false;
     public int numOfPlayers;
@@ -28,7 +29,8 @@ public class HighCard
     public void setUp()
     {
         this.numOfPlayers=0;
-        this.players = new ArrayList<Player>();
+        this.players = new ArrayList<>();
+        this.winners = new ArrayList<>();
         this.cardDeck = new Deck();
         this.started = false;
     }
@@ -98,6 +100,22 @@ public class HighCard
             }
         }
         return winner;
+    }
+
+    public void tieSituation()
+    {
+        this.winners.clear();
+        for(int i=0; i<this.players.size(); i++)
+        {
+            if(this.players.get(finalWinner()) != this.players.get(i))
+            {
+                if (this.players.get(i).getWins() == this.players.get(finalWinner()).getWins())
+                {
+                    this.winners.add(this.players.get(i).getPlayerID()-1);
+                }
+            }
+        }
+        this.winners.add(finalWinner());
     }
 
     public void newGameReset()
