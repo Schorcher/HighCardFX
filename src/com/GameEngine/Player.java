@@ -19,6 +19,10 @@ public class Player
     private String playerName;
     private int playerID;
     private int finalWins=0;
+    private int totalGames=0;
+    private int trueTotalGames=0;
+    private int winRatio=0;
+    private int trueTotalWins=0;
 
     Player(int playerID)
     {
@@ -98,7 +102,38 @@ public class Player
 
     public void setFinalWins()
     {
-        finalWins++;
+        this.finalWins++;
     }
+
+    public int getTotalGames()
+    {
+        return this.totalGames;
+    }
+
+    public void setTotalGames()
+    {
+        this.totalGames++;
+    }
+
+    public void setTrueTotalGames(int totalLoad)
+    {
+        this.trueTotalGames=totalGames+totalLoad;
+    }
+
+    public int getWinRatio()
+    {
+        return trueTotalWins/totalGames;
+    }
+
+    public int getTrueTotalWins()
+    {
+        return trueTotalWins;
+    }
+
+    public void setTrueTotalWins(int wins)
+    {
+        this.trueTotalWins = this.wins+wins;
+    }
+
 
 }

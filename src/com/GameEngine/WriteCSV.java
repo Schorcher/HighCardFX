@@ -17,7 +17,7 @@ public class WriteCSV
     private static final String NEW_LINE_SEPARATOR = "\n";
 
     // Method used to write to the save file
-    public static void writeThis(String name, int wins)
+    public static void writeThis(String name, int wins, int totalGames)
     {
         FileWriter fileWriter = null;
 

@@ -112,6 +112,9 @@ public class PopUpSaveGame
         // Sets On Action for save button.
         saveBtn.setOnAction(evt -> saveBtnEvent());
 
+        // Checks stuff
+        loadSave();
+
         // Sets the properties for the stage.
         dialogStage.setHeight(400);
         dialogStage.setWidth(315);
@@ -160,7 +163,8 @@ public class PopUpSaveGame
     public static void saveGame()
     {
         if(Controller.game.numOfPlayers>0) {
-            WriteCSV.writeThis(nameField.getText(), Controller.game.getPlayer(0).getFinalWins());
+            WriteCSV.writeThis(nameField.getText(), Controller.game.getPlayer(0).getFinalWins(),
+                    Controller.game.getPlayer(0).getTotalGames());
         }
         else
         {
@@ -181,5 +185,21 @@ public class PopUpSaveGame
     public static Stage getStage()
     {
         return dialogStage;
+    }
+
+    public static void loadSave()
+    {
+        if(Controller.game.hasStarted())
+        {
+            for(int i=0; i<saveTable.getItems().size(); i++)
+            {
+                if(saveTable.getItems().get(i).itemID==nameField.getText())
+                {
+                    Controller.game.getPlayer(0).setTrueTotalGames(saveTable.getItems().get(i).getTotalGames());
+                    Controller.game.getPlayer(0).setTrueTotalWins(saveTable.getItems().get(i).getWins());
+                }
+            }
+
+        }
     }
 }

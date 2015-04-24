@@ -3,6 +3,8 @@ package com.GameEngine;
 
 import com.GameEngine.Deck;
 import com.GameEngine.Player;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.util.ArrayList;
 
@@ -15,6 +17,7 @@ import java.util.ArrayList;
  */
 public class HighCard
 {
+
     public ArrayList<Player> players;
     public ArrayList<Integer> winners;
     public Deck cardDeck;
@@ -65,6 +68,7 @@ public class HighCard
         for(int i=0; i<this.players.size(); i++)
         {
             this.players.get(i).setCurrentCard(this.cardDeck.dealCard());
+
         }
         checkRoundWinner();
     }
@@ -107,6 +111,7 @@ public class HighCard
         this.winners.clear();
         for(int i=0; i<this.players.size(); i++)
         {
+            this.players.get(i).setTotalGames();
             if(this.players.get(finalWinner()) != this.players.get(i))
             {
                 if (this.players.get(i).getWins() == this.players.get(finalWinner()).getWins())

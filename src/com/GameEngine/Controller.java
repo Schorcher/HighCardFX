@@ -13,6 +13,7 @@ import com.UserInterface.GameUISetUp;
 
 public class Controller
 {
+    public static SoundPlayer sounds = new SoundPlayer();
     public static HighCard game;
 
     public static void run()
@@ -29,6 +30,7 @@ public class Controller
             reset();
             game.play();
             updateCardBox();
+            sounds.playShuffle();
         } else {
             GameUI.playButton.setDisable(true);
             GameUI.dealButton.setDisable(false);
@@ -38,6 +40,7 @@ public class Controller
             game.play();
             GameUISetUp.setUpCenter();
             updateCardBox();
+            sounds.playShuffle();
         }
     }
 
@@ -45,6 +48,7 @@ public class Controller
         if(game.cardDeck.cardCount()>=game.getNumOfPlayers()) {
             game.dealRound();
             updateCardBox();
+            sounds.playDrawCard();
         } else {
             GameUI.dealButton.setDisable(true);
             GameUI.playButton.setDisable(false);

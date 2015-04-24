@@ -13,16 +13,27 @@ import javafx.beans.property.SimpleStringProperty;
 public class SaveGame
 {
     public String itemID;
-    public int itemWins;
+    public Integer winsInt,totalGamesInt;
     public SimpleStringProperty name;
-    public SimpleIntegerProperty wins;
+    public SimpleIntegerProperty wins, winRatio, totalGames;
 
     SaveGame(String name, int wins)
     {
         this.itemID = name;
-        this.itemWins = wins;
+        this.winsInt = wins;
         this.name = new SimpleStringProperty(name);
         this.wins = new SimpleIntegerProperty(wins);
+    }
+
+    SaveGame(String name, int wins, int totalGames)
+    {
+        this.itemID = name;
+        this.winsInt = wins;
+        this.totalGamesInt = totalGames;
+        this.name = new SimpleStringProperty(name);
+        this.totalGames = new SimpleIntegerProperty(totalGames);
+        this.wins = new SimpleIntegerProperty(wins);
+        this.winRatio = new SimpleIntegerProperty((wins/totalGames));
     }
 
     public String getItemID()
@@ -34,15 +45,13 @@ public class SaveGame
     {
         this.itemID = itemID;
     }
-
-    public int getItemWins()
+    public Integer getWins()
     {
-        return itemWins;
+        return this.winsInt;
     }
-
-    public void setItemWins(int itemWins)
+    public Integer getTotalGames()
     {
-        this.itemWins = itemWins;
+        return this.totalGamesInt;
     }
 
     public SimpleStringProperty nameProperty()
@@ -52,6 +61,10 @@ public class SaveGame
     public SimpleIntegerProperty winsProperty()
     {
         return this.wins;
+    }
+    public SimpleIntegerProperty winRatioProperty()
+    {
+        return winRatio;
     }
 
 }

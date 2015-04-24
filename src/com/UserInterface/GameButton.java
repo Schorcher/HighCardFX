@@ -94,7 +94,9 @@ public class GameButton extends Button implements EventHandler<ActionEvent>
     // Deal button events
     private static void dealEvent()
     {
+
         Controller.dealCard();
+
     }
 
     @Override
