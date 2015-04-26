@@ -23,48 +23,66 @@ public class Controller
 
     public static void playGame()
     {
-        if(game.hasStarted()) {
-            GameUI.playButton.setDisable(true);
-            GameUI.dealButton.setDisable(false);
-            GameUI.endButton.setDisable(false);
-            reset();
-            game.play();
-            updateCardBox();
-            sounds.playShuffle();
-        } else {
-            GameUI.playButton.setDisable(true);
-            GameUI.dealButton.setDisable(false);
-            GameUI.endButton.setDisable(false);
-            GameUI.logo.setVisible(false);
-            Controller.game.resetWins();
-            game.play();
-            GameUISetUp.setUpCenter();
-            updateCardBox();
-            sounds.playShuffle();
+        try {
+            if (game.hasStarted()) {
+                GameUI.playButton.setDisable(true);
+                GameUI.dealButton.setDisable(false);
+                GameUI.endButton.setDisable(false);
+                reset();
+                game.play();
+                updateCardBox();
+                sounds.playShuffle();
+            } else {
+                GameUI.playButton.setDisable(true);
+                GameUI.dealButton.setDisable(false);
+                GameUI.endButton.setDisable(false);
+                GameUI.logo.setVisible(false);
+                Controller.game.resetWins();
+                game.play();
+                GameUISetUp.setUpCenter();
+                updateCardBox();
+                sounds.playShuffle();
+            }
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
         }
     }
 
     public static void dealCard() {
-        if(game.cardDeck.cardCount()>=game.getNumOfPlayers()) {
-            game.dealRound();
-            updateCardBox();
-            sounds.playDrawCard();
-        } else {
-            GameUI.dealButton.setDisable(true);
-            GameUI.playButton.setDisable(false);
-            updateCardBox();
-            finishGame();
+        try {
+            if (game.cardDeck.cardCount() >= game.getNumOfPlayers()) {
+                game.dealRound();
+                updateCardBox();
+                sounds.playDrawCard();
+            } else {
+                GameUI.dealButton.setDisable(true);
+                GameUI.playButton.setDisable(false);
+                updateCardBox();
+                finishGame();
+            }
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
         }
     }
 
     public static void updateCardBox()
     {
-        for(int i=0; i< game.getNumOfPlayers(); i++) {
-            if(game.cardDeck.cardCount()<game.getNumOfPlayers()) {
-                GameUI.boxList.get(i).update();
-            } else {
-                GameUI.boxList.get(i).cardFlip();
+        try {
+            for (int i = 0; i < game.getNumOfPlayers(); i++) {
+                if (game.cardDeck.cardCount() < game.getNumOfPlayers()) {
+                    GameUI.boxList.get(i).update();
+                } else {
+                    GameUI.boxList.get(i).cardFlip();
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
         }
     }
 

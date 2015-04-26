@@ -32,13 +32,19 @@ public class GameUI
     //run the UI
     public static void run()
     {
-        mainStage = new Stage();
-        mainStage.setTitle("HighCard");
-        GameUISetUp.run();
-        setMainStage();
-        setUpMainStage();
-        mainStage.show();
-        Controller.sounds.playGameStart();
+        try {
+            mainStage = new Stage();
+            mainStage.setTitle("HighCard");
+            GameUISetUp.run();
+            setMainStage();
+            setUpMainStage();
+            mainStage.show();
+            Controller.sounds.playGameStart();
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     public static void setUpMainStage()

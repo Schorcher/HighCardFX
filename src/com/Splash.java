@@ -37,6 +37,7 @@ public class Splash
     private static final int SPLASH_WIDTH = 487;
     private static final int SPLASH_HEIGHT = 400;
 
+    @SuppressWarnings("unchecked")
     public static void showSplash(final Stage initStage,Task task)
     {
         ImageView splash = new ImageView(new Image("/com/Resources/Misc/TitleScreen.jpg"));
@@ -75,6 +76,7 @@ public class Splash
         initStage.show();
     }
 
+    @SuppressWarnings("unchecked")
     public static Task<ObservableList<String>> friendTask = new Task()
     {
         @Override
@@ -83,7 +85,7 @@ public class Splash
             ObservableList<String> foundFriends =
                     FXCollections.<String>observableArrayList();
             ObservableList<String> availableFriends =
-                    FXCollections.observableArrayList( "User Module", "User Interface", "User Controls");
+                    FXCollections.observableArrayList( "Game Engine", "User Interface", "User Controls");
 
             updateMessage("Loading Modules . . .");
             for (int i = 0; i < availableFriends.size(); i++)

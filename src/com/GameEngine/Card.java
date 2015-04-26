@@ -100,7 +100,7 @@ public class Card
 
     public Image getImage()
     {
-        String str;
+        String str="";
         if(v==1 || v>10)
         {
             str = ("/com/Resources/PNG-cards/" + getValue().toLowerCase() + "_of_" + getSuit().toLowerCase() + ".png");

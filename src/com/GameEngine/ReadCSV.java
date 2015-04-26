@@ -20,6 +20,7 @@ public class ReadCSV {
     public static List<SaveGame> ArraySaveList = new ArrayList<>();
     public static File f;
 
+    @SuppressWarnings("unchecked")
     public static void run()
     {
         // File path to the CSV universal to any operating system.
