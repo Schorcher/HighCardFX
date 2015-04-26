@@ -38,8 +38,6 @@ public class PopUpExitApp
             firstRun();
         }
 
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-
         Label exitLabel = new Label("Are you sure you want to exit?");
         exitLabel.setAlignment(Pos.BASELINE_CENTER);
 

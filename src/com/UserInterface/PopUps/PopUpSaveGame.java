@@ -34,6 +34,7 @@ public class PopUpSaveGame
     private static Button saveBtn = new Button("Save");
     private static TableColumn<SaveGame,String> nameCol;
     private static TableColumn<SaveGame,Integer> winCol;
+    private static ReadCSV csv = new ReadCSV();
 
 
     public static void firstRun()
@@ -44,7 +45,7 @@ public class PopUpSaveGame
 
         // Calls the methods to make the table.
         saveTable = new TableView<>();
-        ReadCSV.run();
+        csv.run();
         nameCol = new TableColumn<>("Player Name");
         winCol = new TableColumn<>("Wins");
         saveTable.getColumns().addAll(nameCol, winCol);
@@ -65,8 +66,8 @@ public class PopUpSaveGame
             saveTable=null;
             saveTable=new TableView<>();
             saveList.removeAll(saveList);
-            ReadCSV.clear();
-            ReadCSV.run();
+            csv.clear();
+            csv.run();
             nameCol.getColumns().clear();
             winCol.getColumns().clear();
             saveTable.getColumns().clear();
@@ -125,7 +126,7 @@ public class PopUpSaveGame
     // Makes a list of previous saves from a CSV file.
     public static void makeSavesList()
     {
-        saveList = FXCollections.observableArrayList(ReadCSV.getList());
+        saveList = FXCollections.observableArrayList(csv.getList());
     }
 
     // Makes a table from the List of Values

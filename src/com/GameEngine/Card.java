@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
  */
 public class Card
 {
+
     private String suit;
     private String value;
     private int s;
