@@ -1,5 +1,6 @@
 package com.UserInterface;
 
+import com.GameEngine.Controller;
 import com.UserInterface.PopUps.PopUpButton;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
@@ -37,7 +38,7 @@ public class GameUI
         setMainStage();
         setUpMainStage();
         mainStage.show();
-
+        Controller.sounds.playGameStart();
     }
 
     public static void setUpMainStage()

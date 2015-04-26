@@ -15,6 +15,7 @@ public class SoundPlayer
     public Media drawSound = new Media(getClass().getResource("/com/Resources/Sounds/draw.wav").toString());
     public Media errorSound = new Media(getClass().getResource("/com/Resources/Sounds/error.wav").toString());
     public Media shuffleSound = new Media(getClass().getResource("/com/Resources/Sounds/shuffle.wav").toString());
+    public Media newGameSound = new Media(getClass().getResource("/com/Resources/Sounds/newGame.wav").toString());
 
     SoundPlayer()
     {
@@ -39,5 +40,9 @@ public class SoundPlayer
         mp.play();
     }
 
-
+    public void playGameStart()
+    {
+        MediaPlayer mp = new MediaPlayer(newGameSound);
+        mp.play();
+    }
 }
