@@ -32,6 +32,7 @@ public class GameUI
     //run the UI
     public static void run()
     {
+        // tries to run the primary setup of the application window
         try {
             mainStage = new Stage();
             mainStage.setTitle("HighCard");
@@ -47,6 +48,7 @@ public class GameUI
         }
     }
 
+    // Sets the initial mainStage
     public static void setUpMainStage()
     {
         mainStage.setMinHeight(400);

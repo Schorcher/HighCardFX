@@ -24,6 +24,7 @@ public class PopUpEndGame {
     public static Scene endGame;
     private static boolean hasRun=false;
 
+    // Initial setup of popup
     public static void firstRun()
     {
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -65,6 +66,7 @@ public class PopUpEndGame {
         dialogStage.show();
     }
 
+    // unused
     public static void endGame()
     {
         dialogStage.close();
@@ -73,11 +75,13 @@ public class PopUpEndGame {
 
     }
 
+    // Returns the scene
     public static Scene getScene()
     {
         return endGame;
     }
 
+    // Returns the stage
     public static Stage getStage()
     {
         return dialogStage;

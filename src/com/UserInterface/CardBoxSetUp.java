@@ -26,12 +26,15 @@ public class CardBoxSetUp
         GameUI.cardBox.setVgap(10);
         GameUI.cardBox.setPrefWrapLength(4);
 
+        // Adds players to scene
         addPlayerBoxes();
 
+        // Re-sizes the stage for number of players
         resizeMainStage();
 
     }
 
+    // Re-sizes the main stage
     public static void resizeMainStage()
     {
         // Size if greater than 4 players

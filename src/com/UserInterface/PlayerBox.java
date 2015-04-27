@@ -37,6 +37,7 @@ public class PlayerBox extends VBox
         setUp();
     }
 
+    // Initial setup for the box
     private void setUp()
     {
         try {

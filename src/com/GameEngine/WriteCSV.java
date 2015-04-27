@@ -19,6 +19,7 @@ public class WriteCSV
     // Method used to write to the save file
     public static void writeThis(String name, int wins, int totalGames)
     {
+        // Initializes the fileWriter
         FileWriter fileWriter = null;
 
         try
@@ -33,11 +34,14 @@ public class WriteCSV
             // Successful print message
             System.out.println("CSV file was updated successfully !");
         }
+        // Catches any error that occurs when writing to the file
         catch (Exception ex)
         {
+            // Error print message
             System.out.println("Error in CsvFileWriter !");
             ex.printStackTrace();
         }
+        // Closes the writer even if error occurred
         finally
         {
             // Closes the FileWriter.

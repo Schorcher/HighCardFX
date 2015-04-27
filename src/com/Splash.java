@@ -37,24 +37,32 @@ public class Splash
     private static final int SPLASH_WIDTH = 487;
     private static final int SPLASH_HEIGHT = 400;
 
+    // Runs the "loading screen"
     @SuppressWarnings("unchecked")
     public static void showSplash(final Stage initStage,Task task)
     {
+        // Sets the image for the screen
         ImageView splash = new ImageView(new Image("/com/Resources/Misc/TitleScreen.jpg"));
+        // Sets the progressbar
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(SPLASH_WIDTH + 20);
+        // Sets final text for the progress bar
         progressText = new Label("All modules are loaded.");
+        // Creates vbox for the image and bar
         splashLayout = new VBox();
         splashLayout.getChildren().addAll(splash, loadProgress, progressText);
         progressText.setAlignment(Pos.CENTER);
         splashLayout.setEffect(new DropShadow());
 
+        // Binds the progressText to the task message
         progressText.textProperty().bind(task.messageProperty());
         loadProgress.progressProperty().bind(task.progressProperty());
+        // Adds a listener to the tasks state property
         task.stateProperty().addListener(new ChangeListener<Worker.State>() {
             @Override
             public void changed(ObservableValue<? extends Worker.State> observableValue,
                                 Worker.State oldState, Worker.State newState) {
+                // On property succeed close the splash page
                 if (newState == Worker.State.SUCCEEDED) {
                     loadProgress.progressProperty().unbind();
                     loadProgress.setProgress(1);
@@ -76,6 +84,7 @@ public class Splash
         initStage.show();
     }
 
+    // Sets the task used during the loading screen
     @SuppressWarnings("unchecked")
     public static Task<ObservableList<String>> friendTask = new Task()
     {
@@ -90,12 +99,14 @@ public class Splash
             updateMessage("Loading Modules . . .");
             for (int i = 0; i < availableFriends.size(); i++)
             {
+                // Pause for each module loaded(just for show)
                 Thread.sleep(900);
                 updateProgress(i + 1, availableFriends.size());
                 String nextFriend = availableFriends.get(i);
                 foundFriends.add(nextFriend);
                 updateMessage("Loading Modules . . . Loading " + nextFriend);
             }
+            // Pause after all modules are loaded
             Thread.sleep(500);
             updateMessage("All Modules are loaded.");
 

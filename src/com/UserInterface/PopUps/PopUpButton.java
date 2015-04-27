@@ -10,13 +10,14 @@ import javafx.scene.control.Button;
  * Instructor:  Dr. Jones
  * Date:        3/30/15
  * Assignment:  HighCard Game
- * Purpose:
+ * Purpose: Button class for the popUp windows
  */
 public class PopUpButton extends Button implements EventHandler<ActionEvent>
 {
     // Initialize members
     public String buttonID;
 
+    // Default constructor from super
     PopUpButton(String title)
     {
         super(title);
@@ -24,11 +25,13 @@ public class PopUpButton extends Button implements EventHandler<ActionEvent>
         run();
     }
 
+    // Runs initial setup
     private void run()
     {
         setUp();
     }
 
+    // Performs initial setup
     private void setUp()
     {
         // Calls the handle method on button press.
@@ -36,6 +39,7 @@ public class PopUpButton extends Button implements EventHandler<ActionEvent>
 
     }
 
+    // Handles the events from this button
     @Override
     public void handle(ActionEvent event)
     {
@@ -61,11 +65,13 @@ public class PopUpButton extends Button implements EventHandler<ActionEvent>
         }
     }
 
+    // Event if button = start button
     public void startEvent()
     {
         PopUpNumPlayers.setNum();
     }
 
+    // Event if button = yes button
     public void yesEvent()
     {
         if(this.getScene().equals(PopUpEndGame.getScene()))
@@ -79,11 +85,13 @@ public class PopUpButton extends Button implements EventHandler<ActionEvent>
         }
     }
 
+    // Event if button = okay button
     public void okayEvent()
     {
         // sanic was heree
     }
 
+    // Event if button = no button
     public void noEvent()
     {
         if(this.getScene().equals(PopUpEndGame.getScene()))
@@ -96,6 +104,7 @@ public class PopUpButton extends Button implements EventHandler<ActionEvent>
         }
     }
 
+    // Returns the string ID of the button
     @Override
     public String toString()
     {

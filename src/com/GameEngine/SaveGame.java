@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
  * Assignment:  HighCard Game
  * Purpose:
  */
+
 public class SaveGame
 {
     public String itemID;
@@ -17,6 +18,7 @@ public class SaveGame
     public SimpleStringProperty name;
     public SimpleIntegerProperty wins, winRatio, totalGames;
 
+    // Default constructor
     SaveGame(String name, int wins)
     {
         this.itemID = name;
@@ -25,6 +27,7 @@ public class SaveGame
         this.wins = new SimpleIntegerProperty(wins);
     }
 
+    // Wins ratio constructor
     SaveGame(String name, int wins, int totalGames)
     {
         this.itemID = name;
@@ -36,24 +39,35 @@ public class SaveGame
         this.winRatio = new SimpleIntegerProperty((wins/totalGames));
     }
 
+    // Returns the ItemID (player name)
     public String getItemID()
     {
         return itemID;
     }
 
+    // Sets the itemID (player name)
     public void setItemID(String itemID)
     {
         this.itemID = itemID;
     }
+
+    // returns the integer of wins
     public Integer getWins()
     {
         return this.winsInt;
     }
+
+    // Returns the total games value
     public Integer getTotalGames()
     {
         return this.totalGamesInt;
     }
 
+    /*
+     *
+     * Experimental Observable values from the file
+     *
+     */
     public SimpleStringProperty nameProperty()
     {
         return this.name;

@@ -16,11 +16,13 @@ public class Controller
     public static SoundPlayer sounds = new SoundPlayer();
     public static HighCard game;
 
+    // Sets up the initial highcard game
     public static void run()
     {
         game = new HighCard();
     }
 
+    // Starts the highcard game or continues if there is a current game in play
     public static void playGame()
     {
         try {
@@ -50,6 +52,7 @@ public class Controller
         }
     }
 
+    // Deals a round of cards and updates the images and label for each player
     public static void dealCard() {
         try {
             if (game.cardDeck.cardCount() >= game.getNumOfPlayers()) {
@@ -69,6 +72,7 @@ public class Controller
         }
     }
 
+    // Updates the players in the game with current card image and information
     public static void updateCardBox()
     {
         try {
@@ -86,6 +90,7 @@ public class Controller
         }
     }
 
+    // Runs the game winner methods and finishes the current game
     public static void finishGame()
     {
         Controller.game.tieSituation();
@@ -96,6 +101,7 @@ public class Controller
         //GameUI.boxList.get(Controller.game.finalWinner()).setWinner();
     }
 
+    // Resets the game to default values
     public static void reset()
     {
         for(int i=0; i<game.getNumOfPlayers(); i++) {
@@ -104,6 +110,7 @@ public class Controller
         Controller.game.resetWins();
     }
 
+    // Resets the game and goes back to the main menu
     public static void endGame()
     {
         resetEverything();
@@ -111,6 +118,7 @@ public class Controller
         GameUI.setMainStage();
     }
 
+    // Resets everything to default values (null)
     public static void resetEverything()
     {
         GameUI.playButton.setDisable(false);

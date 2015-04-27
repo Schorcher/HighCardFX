@@ -24,11 +24,13 @@ public class HighCard
     public boolean started = false;
     public int numOfPlayers;
 
+    // Runs initial set up of game before it is played.
     HighCard()
     {
         setUp();
     }
 
+    // Sets up the games variables
     public void setUp()
     {
         this.numOfPlayers=0;
@@ -38,10 +40,11 @@ public class HighCard
         this.started = false;
     }
 
+    // When play is called it sets up the players and deals a round of cards
     public void play()
     {
         currentGameReset();
-        if(started==false)
+        if(!started)
         {
             setUpPlayers();
         }
@@ -49,11 +52,13 @@ public class HighCard
         this.started=true;
     }
 
+    // Sets the number of players in the game
     public void setNumOfPlayers(int num)
     {
         this.numOfPlayers=num;
     }
 
+    // Creates the players themselves
     public void setUpPlayers()
     {
         for(int i=1; i<=this.numOfPlayers; i++)
@@ -62,6 +67,7 @@ public class HighCard
         }
     }
 
+    // Deals a card to each player
     public void dealRound()
     {
         resetRoundWinner();
@@ -73,6 +79,7 @@ public class HighCard
         checkRoundWinner();
     }
 
+    // Checks who won the round of cards dealt
     public void checkRoundWinner()
     {
         int count=0;
@@ -90,6 +97,7 @@ public class HighCard
         this.players.get(count).win();
     }
 
+    // Checks who won at the end of the game
     public int finalWinner()
     {
         double max=0, current;
@@ -106,6 +114,7 @@ public class HighCard
         return winner;
     }
 
+    // Checks for a tie and adds them as final winners
     public void tieSituation()
     {
         this.winners.clear();
@@ -123,6 +132,7 @@ public class HighCard
         this.winners.add(finalWinner());
     }
 
+    // Resets everything
     public void newGameReset()
     {
         this.cardDeck.resetDeck();
@@ -131,6 +141,7 @@ public class HighCard
         this.numOfPlayers=0;
     }
 
+    // Resets current game
     public void currentGameReset()
     {
         this.cardDeck.resetDeck();
@@ -140,6 +151,7 @@ public class HighCard
         }
     }
 
+    // Resets the current round winner
     public void resetRoundWinner()
     {
         for(int i=0; i<this.players.size(); i++)
@@ -148,21 +160,25 @@ public class HighCard
         }
     }
 
+    // gets player
     public Player getPlayer(int i)
     {
         return this.players.get(i);
     }
 
+    // checks whether or not the game has started
     public boolean hasStarted()
     {
         return started;
     }
 
+    // Returns the number of players in the game
     public int getNumOfPlayers()
     {
         return numOfPlayers;
     }
 
+    // resets the players wins
     public void resetWins()
     {
         for(int i=0; i<this.players.size(); i++)

@@ -153,6 +153,7 @@ public class PopUpSaveGame
         saveTable.setOnKeyPressed(evt -> clickEvt());
     }
 
+    // Runs when save button is clicked
     public static void saveBtnEvent()
     {
         // Save the game
@@ -161,6 +162,7 @@ public class PopUpSaveGame
         closeThis();
     }
 
+    // Saves the game to the save file
     public static void saveGame()
     {
         if(Controller.game.numOfPlayers>0) {
@@ -173,28 +175,32 @@ public class PopUpSaveGame
         }
     }
 
+    // When item in table is clicked, replace nameField with the name.
     public static void clickEvt()
     {
         nameField.setText(saveTable.getSelectionModel().getSelectedItem().getItemID());
     }
 
+    // Closes the stage
     public static void closeThis()
     {
         dialogStage.close();
     }
 
+    // Returns the stage
     public static Stage getStage()
     {
         return dialogStage;
     }
 
+    // Loads the save
     public static void loadSave()
     {
         if(Controller.game.hasStarted())
         {
             for(int i=0; i<saveTable.getItems().size(); i++)
             {
-                if(saveTable.getItems().get(i).itemID==nameField.getText())
+                if(saveTable.getItems().get(i).itemID.equals(nameField.getText()))
                 {
                     Controller.game.getPlayer(0).setTrueTotalGames(saveTable.getItems().get(i).getTotalGames());
                     Controller.game.getPlayer(0).setTrueTotalWins(saveTable.getItems().get(i).getWins());

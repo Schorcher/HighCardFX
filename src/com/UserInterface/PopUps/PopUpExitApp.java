@@ -23,6 +23,7 @@ public class PopUpExitApp
     public static Scene exitScene;
     private static boolean hasRun=false;
 
+    // Initial setup of popup
     public static void firstRun()
     {
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -67,6 +68,7 @@ public class PopUpExitApp
         dialogStage.show();
     }
 
+    // Closes the window
     public static void close()
     {
         dialogStage.close();

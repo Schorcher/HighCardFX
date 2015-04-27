@@ -17,7 +17,7 @@ import javafx.scene.layout.VBox;
 
 public class GameUISetUp
 {
-
+    // Initial setup of the GameUI
     public static void run()
     {
         GameUI.borderPane = new BorderPane();
@@ -32,6 +32,7 @@ public class GameUISetUp
 
     }
 
+    // Sets the initial background for the game
     private static void setUpBackground()
     {
         // Sets up the background
@@ -58,6 +59,7 @@ public class GameUISetUp
 
     }
 
+    // Sets top with MenuBar and buttons
     private static void setUpTop()
     {
         // Set up the top menu bar(File, Edit, Help)
@@ -94,6 +96,7 @@ public class GameUISetUp
         GameUI.borderPane.setTop(GameUI.top);
     }
 
+    // Sets center with cardBoxes
     public static void setUpCenter()
     {
         // Set up the CardBox

@@ -17,6 +17,7 @@ public class Card
     private int s;
     private int v;
 
+    // Default card constructor
     Card(int suit, int val)
     {
         this.setSuit(suit);
@@ -24,6 +25,8 @@ public class Card
         this.s=suit;
         this.v=val;
     }
+
+    // Sets the suit for the current card
     public void setSuit(int num)
     {
         switch (num)
@@ -42,10 +45,14 @@ public class Card
                 break;
         }
     }
+
+    // Returns the suit for the card
     public String getSuit()
     {
         return suit;
     }
+
+    // Sets the value "number" or "face" of the card
     public void setValue(int num)
     {
         switch (num)
@@ -99,6 +106,7 @@ public class Card
         }
     }
 
+    // Returns the image for the card
     public Image getImage()
     {
         String str="";
@@ -113,11 +121,13 @@ public class Card
         return new Image(str);
     }
 
+    // Returns the value of the card
     public String getValue()
     {
         return value;
     }
 
+    // Ranks the card as a double value, Whole number is value, decimal is the suit.
     public double rankCard()
     {
         String str = (v+ "."+s);
@@ -125,6 +135,7 @@ public class Card
         return rank;
     }
 
+    // Returns the String "name" of the card
     public String toString()
     {
         return (getValue() + " of " + getSuit());

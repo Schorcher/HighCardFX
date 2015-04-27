@@ -20,11 +20,12 @@ public class Deck
 
     Deck()
     {
-        this.cardDeck = new ArrayList<Card>();
-        this.usedCards = new ArrayList<Card>();
+        this.cardDeck = new ArrayList<>();
+        this.usedCards = new ArrayList<>();
         setDeck();
     }
 
+    // Deals the card at the top of the deck and moves it to used cards.
     public Card dealCard()
     {
         usedCards.add(cardDeck.get(topCard));
@@ -38,6 +39,7 @@ public class Deck
         Collections.shuffle(cardDeck);
     }
 
+    // Creates a deck of 52 unique cards
     public void setDeck()
     {
         for(int i=1; i<=4; i++)
@@ -50,11 +52,13 @@ public class Deck
         shuffle();
     }
 
+    // Returns the number of cards left in the deck
     public int cardCount()
     {
         return cardDeck.size();
     }
 
+    // Resets the deck
     public void resetDeck()
     {
         cardDeck.clear();

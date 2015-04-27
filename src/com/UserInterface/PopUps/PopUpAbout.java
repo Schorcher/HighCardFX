@@ -28,12 +28,14 @@ public class PopUpAbout
     private static final Stage dialogStage = new Stage();
     private static boolean hasRun=false;
 
+    // Initial setup of popUp
     public static void firstRun()
     {
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.initOwner(GameUI.mainStage);
         hasRun=true;
     }
+
     public static void run()
     {
         // Sets the modality of the window

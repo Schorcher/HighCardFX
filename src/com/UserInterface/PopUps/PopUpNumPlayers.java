@@ -19,6 +19,8 @@ import javafx.stage.Stage;
  * Assignment:  HighCard Game
  * Purpose:
  */
+
+@SuppressWarnings("unchecked")
 public class PopUpNumPlayers
 {
     private static final Stage dialogStage = new Stage();
@@ -28,6 +30,7 @@ public class PopUpNumPlayers
             .observableArrayList(3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
     private static boolean hasRun=false;
 
+    // Initial setup of the popup
     public static void firstRun()
     {
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -70,6 +73,7 @@ public class PopUpNumPlayers
         dialogStage.show();
     }
 
+    // Sets the number of plays in game to current selection
     public static void setNum()
     {
         if(listOfNumPlayers.getSelectionModel().getSelectedIndex()>=0) {
@@ -81,11 +85,13 @@ public class PopUpNumPlayers
 
     }
 
+    // Closes the stage
     public static void closeThis()
     {
         dialogStage.close();
     }
 
+    // Returns the stage
     public static Stage getStage()
     {
         return dialogStage;

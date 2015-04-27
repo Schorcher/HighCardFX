@@ -20,6 +20,8 @@ import javafx.stage.Stage;
  * Assignment:  HighCard Game
  * Purpose:
  */
+
+@SuppressWarnings("unchecked")
 public class PopUpOptions
 {
     private static final Stage dialogStage = new Stage();
@@ -29,13 +31,13 @@ public class PopUpOptions
     private static Button okayBtn, cancelBtn;
     private static boolean hasRun = false;
 
+    // Initial setup of popup
     public static void firstRun()
     {
         dialogStage.initModality(Modality.WINDOW_MODAL);
         dialogStage.initOwner(GameUI.mainStage);
         hasRun=true;
     }
-
 
     public static void run()
     {
@@ -79,6 +81,7 @@ public class PopUpOptions
 
     }
 
+    // Sets the game background to current selection.
     public static void setBackground()
     {
         if(listOfBackgrounds.getSelectionModel().getSelectedIndex() == 0)
@@ -96,6 +99,7 @@ public class PopUpOptions
         dialogStage.close();
     }
 
+    // **Future feature**
     public void setSoundEffects()
     {
 

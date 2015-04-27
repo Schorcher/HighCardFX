@@ -19,6 +19,7 @@ import javafx.scene.control.MenuItem;
  */
 public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
 {
+    // Default constructor with stuff from super
     GameMenuBar()
     {
         // Get constructor from super
@@ -32,6 +33,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
         setUp();
     }
 
+    // Runs initial setup
     public void setUp()
     {
         // Add File menu
@@ -57,7 +59,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
 
     }
 
-
+    // Handles events when a menu item is clicked
     @Override
     public void handle(ActionEvent event)
     {
@@ -84,6 +86,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
 
     }
 
+    // Event when File->Close is clicked
     protected static void closeEvent()
     {
         PopUpExitApp.start();
@@ -94,6 +97,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
          */
     }
 
+    // Event when File->Save is clicked
     protected static void saveEvent()
     {
         /*
@@ -104,6 +108,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
         PopUpSaveGame.start();
     }
 
+    // Event when Edit->Options is clicked
     protected static void optionsEvent()
     {
         /*
@@ -114,6 +119,7 @@ public class GameMenuBar extends MenuBar implements EventHandler<ActionEvent>
         PopUpOptions.run();
     }
 
+    // Event when Help->About is clicked
     protected static void aboutEvent()
     {
         PopUpAbout.run();

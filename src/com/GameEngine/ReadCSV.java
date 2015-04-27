@@ -8,10 +8,9 @@ package com.GameEngine;
  * Assignment:  HighCard Game
  * Purpose:
  */
-import jdk.nashorn.api.scripting.URLReader;
+import com.Main;
 
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,20 +18,19 @@ import java.util.Map;
 
 public class ReadCSV {
 
-    public  Map<String, Integer> maps = new HashMap<String, Integer>();
-    public  List<SaveGame> ArraySaveList = new ArrayList<>();
+    public static Map<String, Integer> maps = new HashMap<String, Integer>();
+    public static List<SaveGame> ArraySaveList = new ArrayList<>();
 
     public ReadCSV()
     {
 
     }
 
-    @SuppressWarnings("unchecked")
-    public  void run()
+    public void run()
     {
         // File path to the CSV universal to any operating system.
         //String csvFile = System.getProperty("user.dir") + "/src/com/Resources/SavedGames/saves.csv";
-        InputStream csvFile = this.getClass().getClassLoader().getResourceAsStream("com/Resources/SavedGames/saves.csv");
+        InputStream is = Main.class.getResourceAsStream("/com/Resources/SavedGames/saves.csv");
 
         BufferedReader br = null;
         String line = "";
@@ -40,7 +38,7 @@ public class ReadCSV {
 
         try
         {
-            br = new BufferedReader(new InputStreamReader(csvFile));
+            br = new BufferedReader(new InputStreamReader(is));
             while ((line = br.readLine()) != null) {
 
                 // use comma as separator
